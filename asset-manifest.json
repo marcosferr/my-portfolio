@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/my-portfolio/static/js/main.33ea785d.chunk.js",
-    "main.js.map": "/my-portfolio/static/js/main.33ea785d.chunk.js.map",
-    "runtime-main.js": "/my-portfolio/static/js/runtime-main.4c2aa4b5.js",
-    "runtime-main.js.map": "/my-portfolio/static/js/runtime-main.4c2aa4b5.js.map",
-    "static/js/2.f20cf1c0.chunk.js": "/my-portfolio/static/js/2.f20cf1c0.chunk.js",
-    "static/js/2.f20cf1c0.chunk.js.map": "/my-portfolio/static/js/2.f20cf1c0.chunk.js.map",
-    "index.html": "/my-portfolio/index.html",
-    "precache-manifest.ea2dad40089506fd28e5f91a8b97778e.js": "/my-portfolio/precache-manifest.ea2dad40089506fd28e5f91a8b97778e.js",
-    "service-worker.js": "/my-portfolio/service-worker.js",
-    "static/js/2.f20cf1c0.chunk.js.LICENSE.txt": "/my-portfolio/static/js/2.f20cf1c0.chunk.js.LICENSE.txt",
-    "static/media/profile.png": "/my-portfolio/static/media/profile.90f4b7d1.png",
-    "static/media/project1.png": "/my-portfolio/static/media/project1.9aeeb86f.png",
-    "static/media/project2.png": "/my-portfolio/static/media/project2.5b40bab9.png",
-    "static/media/project3.png": "/my-portfolio/static/media/project3.5b40bab9.png"
+    "main.js": "/static/js/main.33ea785d.chunk.js",
+    "main.js.map": "/static/js/main.33ea785d.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.4c2aa4b5.js",
+    "runtime-main.js.map": "/static/js/runtime-main.4c2aa4b5.js.map",
+    "static/js/2.f20cf1c0.chunk.js": "/static/js/2.f20cf1c0.chunk.js",
+    "static/js/2.f20cf1c0.chunk.js.map": "/static/js/2.f20cf1c0.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.ea2dad40089506fd28e5f91a8b97778e.js": "/precache-manifest.ea2dad40089506fd28e5f91a8b97778e.js",
+    "service-worker.js": "/service-worker.js",
+    "static/js/2.f20cf1c0.chunk.js.LICENSE.txt": "/static/js/2.f20cf1c0.chunk.js.LICENSE.txt",
+    "static/media/profile.png": "/static/media/profile.90f4b7d1.png",
+    "static/media/project1.png": "/static/media/project1.9aeeb86f.png",
+    "static/media/project2.png": "/static/media/project2.5b40bab9.png",
+    "static/media/project3.png": "/static/media/project3.5b40bab9.png"
   },
   "entrypoints": [
     "static/js/runtime-main.4c2aa4b5.js",
