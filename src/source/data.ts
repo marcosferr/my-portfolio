@@ -12,13 +12,13 @@ export const colors = {
 };
 
 export const headData = {
-  title: 'Name | Web developer',
+  title: 'Name | Marcos Ferreira',
   description: 'Welcome to my website',
 };
 
 export const mainData = {
   title: 'Hi, my name is ',
-  name: 'Full Name',
+  name: 'Marcos Ferreira',
   subtitle: 'I am a web developer',
   cta: 'Know more',
 };
