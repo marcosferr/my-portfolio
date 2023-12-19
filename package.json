@@ -1,4 +1,5 @@
 {
+  "homepage": "https://marcosferr.github.io/",
   "name": "selfolio",
   "version": "0.1.0",
   "private": true,
@@ -9,6 +10,7 @@
     "@fortawesome/react-fontawesome": "^0.1.11",
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
+    "gh-pages": "^6.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
@@ -21,6 +23,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -55,7 +58,7 @@
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^4",
     "prettier": "^2.1.1",
-    "typescript": "^4.0.2",
+    "typescript": "^3.9.10",
     "typescript-styled-plugin": "^0.15.0"
   }
 }
