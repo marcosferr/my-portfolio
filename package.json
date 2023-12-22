@@ -1,6 +1,5 @@
 {
   "homepage": "https://marcosferr.tech",
-  "name": "selfolio",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -13,7 +12,7 @@
     "gh-pages": "^6.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-helmet": "^6.1.0",
+    "react-helmet": "^5.2.1",
     "react-parallax-tilt": "^1.4.65",
     "react-reveal": "^1.2.2",
     "react-scripts": "3.4.3",
@@ -46,8 +45,8 @@
     "@types/react-helmet": "^6.1.0",
     "@types/smoothscroll-polyfill": "^0.3.1",
     "@types/styled-components": "^5.1.3",
-    "@typescript-eslint/eslint-plugin": "^4.0.1",
-    "@typescript-eslint/parser": "^4.0.1",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
     "eslint": "^6.6.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-prettier": "^6.11.0",
@@ -58,7 +57,7 @@
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^4",
     "prettier": "^2.1.1",
-    "typescript": "^3.9.10",
+    "typescript": "^5.3.3",
     "typescript-styled-plugin": "^0.15.0"
   }
 }
