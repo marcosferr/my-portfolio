@@ -40,7 +40,7 @@ const Chat: React.FC<ChatProps> = ({onClick}) => {
         ]);
         
         setLoading(true);
-        fetch(process.env.REACT_APP_BACKEND_URL || "http://localhost:3000/api/v1/messages", {
+        fetch(process.env.REACT_APP_BACKEND_URL || "https://chatbot-portafolio-q6syhv63lq-uc.a.run.app/api/v1/messages", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
