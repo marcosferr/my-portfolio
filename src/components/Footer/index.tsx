@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
       >
         <FontAwesomeIcon id="up" icon={faChevronUp} size="1x" />
       </a>
-      <div id='redes'>
+      <div id="redes">
         <a
           href={FooterData.githubUrl}
           aria-label="GitHub Link"
@@ -49,7 +49,19 @@ const Footer: React.FC = () => {
       </div>
       <hr />
 
-     
+      {/* If you enjoyed this template, please leave my credits here! :) */}
+
+      <span className="copyright">
+        © {new Date().getFullYear()} - Template developed by
+        <a
+          href="https://github.com/guvarallo"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          {' '}
+          Gus Varallo
+        </a>
+      </span>
     </Container>
   );
 };

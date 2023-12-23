@@ -12,7 +12,6 @@ const Chat: React.FC<ChatProps> = ({onClick}) => {
     const [callToAction, setCallToAction] = React.useState(false);
     const [message, setMessage] = React.useState('');
     const [loading, setLoading] = React.useState(true);
-   
     useEffect(() => {
         // wait 1 second and then show the welcome message
         setTimeout(() => {
@@ -39,8 +38,9 @@ const Chat: React.FC<ChatProps> = ({onClick}) => {
                 type: 'user'
             }
         ]);
+        
         setLoading(true);
-        fetch('http://localhost:5000/api/v1/messages', {
+        fetch(process.env.REACT_APP_BACKEND_URL || "http://localhost:3000/api/v1/messages", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
