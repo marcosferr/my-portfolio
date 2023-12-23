@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { Container } from './styles';
 import robi from '../../../assets/robi.png';
 import {  Loader } from '../Loader/styles'
+
 interface ChatProps {
     onClick: () => void;
 }
@@ -49,9 +50,9 @@ const Chat: React.FC<ChatProps> = ({onClick}) => {
             })
         })
         .then(response => {
-            if(response.status === 429) {
-                throw new Error('Too many requests');
-            }
+             if(response.status === 429) {
+                throw new Error('Too many Requests');
+             }
             return response.json();
         })
         .then(data => {
@@ -66,17 +67,16 @@ const Chat: React.FC<ChatProps> = ({onClick}) => {
             setLoading(false);
         })
         .catch(err => {
-            if (err.message === 'Too Many Requests') {
                 setMessages(prevMessages => [
                     ...prevMessages,
                     {
-                        text: 'Me parece que tienes muchas preguntas, podrías comunicarte en sus redes.',
+                        text: 'Ups algo ha salido mal con mis circuitos, podrías comunicarte con el en sus redes.',
                         type: 'bot'
                     }
                 ]);
                 setCallToAction(true);
-            }
-            console.log(err);
+            
+           
             setLoading(false);
         });
     };
@@ -96,7 +96,7 @@ const Chat: React.FC<ChatProps> = ({onClick}) => {
                    
                    </div>
                    ))} 
-              {callToAction && <a href='#redes'> Redes Sociales</a>}
+              {callToAction && <a href='#redes' > Redes Sociales</a>}
               {loading && <Loader/>}      
         </div>
         <div className="footer">

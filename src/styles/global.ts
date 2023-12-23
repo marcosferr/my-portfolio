@@ -12,6 +12,7 @@ export default createGlobalStyle`
     color: ${colors.first}; */
   }
 
+  
   body {
     background: #FFF;
     -webkit-font-smoothing: antialiased;
@@ -28,4 +29,5 @@ export default createGlobalStyle`
   a:active {
     text-decoration: none;
   }
+
 `;
