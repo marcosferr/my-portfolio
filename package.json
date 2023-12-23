@@ -17,11 +17,13 @@
     "react-parallax-tilt": "^1.4.65",
     "react-reveal": "^1.2.2",
     "react-scripts": "3.4.3",
+    "server": "^1.0.38",
     "smoothscroll-polyfill": "^0.4.4",
     "styled-components": "^5.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
+    "serve": "serve -s build",
     "build": "react-scripts build",
     "deploy": "gh-pages -d build",
     "test": "react-scripts test",
