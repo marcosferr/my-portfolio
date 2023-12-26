@@ -1,35 +1,44 @@
 // src/components/Chat/index.tsx
-import React, { useEffect } from 'react';
+import React, { useEffect,useRef } from 'react';
 import { Container } from './styles';
 import robi from '../../../assets/robi.png';
 import {  Loader } from '../Loader/styles'
 
 interface ChatProps {
     onClick: () => void;
+    messages: Message[];
+    setMessages: React.Dispatch<React.SetStateAction<Message[]>>;
 }
-const Chat: React.FC<ChatProps> = ({onClick}) => {
-    const [messages, setMessages] = React.useState<{ text: string; type: string; }[]>([]);
-    const [callToAction, setCallToAction] = React.useState(false);
+
+interface Message {
+    text: string;
+    type: 'bot' | 'user' | 'callToAction';
+}
+
+const Chat: React.FC<ChatProps> = ({onClick, messages, setMessages}) => {
+    
+    const [contacts, setContacts] = React.useState(false);
     const [message, setMessage] = React.useState('');
-    const [loading, setLoading] = React.useState(true);
+    const [loading, setLoading] = React.useState(false);
+    const endOfMessagesRef = useRef<HTMLDivElement>(null)
+   
+ 
     useEffect(() => {
-        // wait 1 second and then show the welcome message
-        setTimeout(() => {
-            setMessages([
-                ...messages,
-                {
-                    text: 'Hola, ¿En que puedo ayudarte?',
-                    type: 'bot'
-                }
-            ]);
-            setLoading(false);
-        }, 1000)},
-        []);
+        
+        if (endOfMessagesRef.current) {
+            endOfMessagesRef.current.scrollIntoView({ behavior: "smooth" });
+        }
+    }, [messages]);
 
+    const handleCallToAction = (text: string) => {
+        onSend(text);
+    }
 
-    const onSend = () => {
-        if (message.trim() === '') return;
-        const messageSent = message
+    const onSend = (text : string) => {
+        if (text.trim() === '') return;
+        const messageSent = text
+        
+        
         setMessage(''); // clear the input
         setMessages([
             ...messages,
@@ -74,12 +83,14 @@ const Chat: React.FC<ChatProps> = ({onClick}) => {
                         type: 'bot'
                     }
                 ]);
-                setCallToAction(true);
+                setContacts(true);
             
            
             setLoading(false);
         });
     };
+
+
 
     return (
         <Container>
@@ -89,19 +100,25 @@ const Chat: React.FC<ChatProps> = ({onClick}) => {
             <div className="close" onClick={onClick}>X</div>
         </div>
         <div className="content">
-            {messages.map((message, index) => (
-                <div className={`${message.type}-message`} key={index}>
-                    {message.type === 'bot' && <div className='bot-icon'><img src={robi} alt="Robot-Icon" /></div>}
-                    <div className="text">{message.text}</div>
-                   
-                   </div>
-                   ))} 
-              {callToAction && <a href='#redes' > Redes Sociales</a>}
-              {loading && <Loader/>}      
+            {messages.map((message, index) => {
+                return (
+                    message.type === 'callToAction' ? (
+                        <div className='call-to-action' key={index} onClick={() => { handleCallToAction(message.text) }}>{message.text}</div>
+                    ) : (
+                        <div className={`${message.type}-message`} key={index}>
+                            {message.type === 'bot' && <div className='bot-icon'><img src={robi} alt="Robot-Icon" /></div>}
+                            <div className="text">{message.text}</div>
+                        </div>
+                    )
+                );
+            })}
+            <div ref={endOfMessagesRef}/>
+            {contacts && <a href='#redes'>Redes Sociales</a>}
+            {loading && <Loader />}
         </div>
         <div className="footer">
             <input type="text" placeholder="Escribe su pregunta" value={message} onChange={(e)=> setMessage(e.target.value)}/>
-            <button onClick={onSend}>Enviar</button>
+            <button onClick={()=>onSend(message)}>Enviar</button>
         </div>
         </Container>
     );

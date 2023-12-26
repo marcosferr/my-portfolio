@@ -3,6 +3,7 @@ import profilePicture from '../assets/profile.png';
 import project1 from '../assets/project1.png';
 import project2 from '../assets/project2.png';
 import project3 from '../assets/project3.png';
+import project4 from '../assets/project4.png';
 
 export const colors = {
   first: '#232122',
@@ -38,17 +39,6 @@ export const projectSectionTitle = 'Projects';
 
 export const projectData = [
   {
-    title: 'Tataapp',
-    description1: `Forest Flame is a web application that uses information from NASA's FIRMS satellites to detect fires. This information is then presented to
-    firefighters through an intuitive interface, making it easy for them to quickly identify and respond to fires.`,
-    description2: `This Project was developed during the NASA Space Apps Challenge 2023, seeking to provide a solution to the challenge "Forest Fire Community Based Solutions".`,
-    liveUrl: 'https://github.com/marcosferr/Forest-Flame-App',
-    liveButtonText: 'See it live',
-    sourceUrl: 'https://github.com/marcosferr/Forest-Flame-App',
-    sourceText: 'Source Code',
-    img: { src: project1 },
-  },
-  {
     title: 'Startup Weekend Encarnación',
     description1: `Developed a user-friendly website using WordPress, focusing on event information, registration, and community interaction.
     Integrated WooCommerce and Metrepay for seamless online and local payment options, enabling convenient registration and participation.`,
@@ -58,6 +48,16 @@ export const projectData = [
     sourceUrl: 'https://www.instagram.com/switapua/',
     sourceText: 'See the event',
     img: { src: project2 },
+  },
+  {
+    title: 'Robi - AI Chatbot',
+    description1: `Developed a AI Chatbot using ReactJS and OpenAI Assistans. This chatbot is able to answer questions about me and my projects.`,
+    description2: `I wanted to create a project that could speak for me and my work. I used OpenAI Assistants and Express for the backend, it is deployed in a container in Google Cloud Run.`,
+    liveUrl: '#',
+    liveButtonText: 'Test it here',
+    sourceUrl: 'https://github.com/marcosferr/chatbot-portafolio',
+    sourceText: 'The repository',
+    img: { src: project4 },
   },
   {
     title: 'SocialPlace - (under development)    ',
@@ -71,6 +71,17 @@ export const projectData = [
     sourceUrl: 'https://github.com/marcosferr/Socialplace',
     sourceText: 'Source Code',
     img: { src: project3 },
+  },
+  {
+    title: 'Tataapp',
+    description1: `Forest Flame is a web application that uses information from NASA's FIRMS satellites to detect fires. This information is then presented to
+    firefighters through an intuitive interface, making it easy for them to quickly identify and respond to fires.`,
+    description2: `This Project was developed during the NASA Space Apps Challenge 2023, seeking to provide a solution to the challenge "Forest Fire Community Based Solutions".`,
+    liveUrl: 'https://github.com/marcosferr/Forest-Flame-App',
+    liveButtonText: 'See it live',
+    sourceUrl: 'https://github.com/marcosferr/Forest-Flame-App',
+    sourceText: 'Source Code',
+    img: { src: project1 },
   },
 ];
 

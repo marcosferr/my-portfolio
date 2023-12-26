@@ -80,8 +80,8 @@ export const Container = styled.div`
     padding: 0 10px;
     border: 1px solid ${colors.primary};
     border-radius: 8px;
-    background-color: ${colors.primary};
-    color: ${colors.quaternary};
+    
+    color: ${colors.primary};
     font-size: 16px;
     font-weight: 600;
     outline: none;
@@ -123,7 +123,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    margin: 10px 0;
+    margin: 5px 0;
     border-radius: 8px;
     color: ${colors.quaternary};
     padding: 5px; /* Updated: Decreased padding */
@@ -148,5 +148,18 @@ export const Container = styled.div`
     background-color: ${colors.tertiary};
     color: ${colors.secondary};
     padding: 5px; /* Updated: Decreased padding */
+  }
+  .call-to-action {
+    font-size: 14px;
+    border-radius: 8px;
+    background-color: dodgerblue;
+    padding: 5px;
+    margin: 5px;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+  }
+  .call-to-action:hover {
+    background-color: royalblue;
   }
 };`
