@@ -65,7 +65,8 @@ const Chat: React.FC<ChatProps> = ({onClick, messages, setMessages}) => {
             },
             body: JSON.stringify({
                 message: messageSent
-            })
+            }),
+            credentials: 'include'
         })
         .then(response => {
              if(response.status === 429) {
