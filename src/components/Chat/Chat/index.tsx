@@ -20,6 +20,7 @@ const Chat: React.FC<ChatProps> = ({onClick, messages, setMessages}) => {
     const [contacts, setContacts] = React.useState(false);
     const [message, setMessage] = React.useState('');
     const [loading, setLoading] = React.useState(false);
+    const [messageToSend, setMessageToSend] = React.useState<string | null>(null);
     const endOfMessagesRef = useRef<HTMLDivElement>(null)
    
  
@@ -30,8 +31,15 @@ const Chat: React.FC<ChatProps> = ({onClick, messages, setMessages}) => {
         }
     }, [messages]);
 
-    const handleCallToAction = (text: string) => {
-        onSend(text);
+    useEffect(() => {
+        if (loading && messageToSend !== null) {
+          onSend(messageToSend);
+        }
+      }, [loading, messageToSend]);
+
+    const handleCallToAction =  (text: string) => {
+        setLoading(true);
+        setMessageToSend(text);
     }
 
     const onSend = (text : string) => {
@@ -48,7 +56,8 @@ const Chat: React.FC<ChatProps> = ({onClick, messages, setMessages}) => {
             }
         ]);
         
-        setLoading(true);
+        
+        
         fetch(process.env.REACT_APP_BACKEND_URL || "https://chatbot-portafolio-q6syhv63lq-uc.a.run.app/api/v1/messages", {
             method: 'POST',
             headers: {
@@ -74,6 +83,7 @@ const Chat: React.FC<ChatProps> = ({onClick, messages, setMessages}) => {
             ]);
             
             setLoading(false);
+            setMessageToSend(null);
         })
         .catch(err => {
                 setMessages(prevMessages => [
@@ -86,7 +96,8 @@ const Chat: React.FC<ChatProps> = ({onClick, messages, setMessages}) => {
                 setContacts(true);
             
            
-            setLoading(false);
+                setLoading(false);
+                setMessageToSend(null);
         });
     };
 
@@ -112,13 +123,16 @@ const Chat: React.FC<ChatProps> = ({onClick, messages, setMessages}) => {
                     )
                 );
             })}
+            {loading && <div style={{height:"2rem"}}>  <Loader />  </div>}
             <div ref={endOfMessagesRef}/>
             {contacts && <a href='#redes'>Redes Sociales</a>}
-            {loading && <Loader />}
+            
         </div>
         <div className="footer">
             <input type="text" placeholder="Escribe su pregunta" value={message} onChange={(e)=> setMessage(e.target.value)}/>
-            <button onClick={()=>onSend(message)}>Enviar</button>
+            <button onClick={()=> {
+                setLoading(true);
+                setMessageToSend(message)}}>Enviar</button>
         </div>
         </Container>
     );

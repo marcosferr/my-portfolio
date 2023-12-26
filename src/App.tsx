@@ -15,7 +15,7 @@ type Message = {
 };
 
 const App: React.FC = () => {
-  const [isChatOpen, setIsChatOpen] = useState(true);
+  const [isChatOpen, setIsChatOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
 
   const handleOpenChat = () => {
@@ -42,7 +42,7 @@ const App: React.FC = () => {
             {text: '¿Qué tecnologías usa Marcos?', type: 'callToAction'},
             {text: '¿Qué proyectos ha realizado Marcos?', type: 'callToAction'},
             {text: '¿Cómo describirías a Marcos trabajando en equipo?', type: 'callToAction'},
-            {text: '¿Cómo puedo contactar a Marcos?', type: 'callToAction'},
+            {text: '¿En que redes puedo conectar con Marcos?', type: 'callToAction'},
         ]);
     }, 1000)},
     []);

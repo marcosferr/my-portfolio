@@ -60,6 +60,7 @@ export const Container = styled.div`
     flex-direction: column;
     overflow-y: auto;
     padding: 10px;
+    padding-bottom:30px;
   }
 
   .footer {
